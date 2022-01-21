@@ -77,6 +77,14 @@ const nextISSTimesForMyLocation = function (callback) {
   });
 };
 
+const printPassTimes = function (passTimes) {
+  for (const pass of passTimes) {
+    const datetime = new Date(pass.risetime * 1000).toLocaleDateString("en-US");
+    console.log(`Next pass: ${datetime} => ${pass.duration} seconds`);
+  }
+};
+
 module.exports = {
   nextISSTimesForMyLocation,
+  printPassTimes,
 };
